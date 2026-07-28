@@ -2,7 +2,7 @@
 
 - Keep the website lightweight and progressively enhance it only when needed.
 - Write source code, documentation, and commit messages in English.
-- Store static website content in `public/`.
+- Store Astro source in `src/`; use `public/` only for pass-through static assets.
 
 ## AnyCap
 

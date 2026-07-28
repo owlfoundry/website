@@ -1,4 +1,5 @@
 ---
+import "@fontsource-variable/inter";
 import "../styles/global.css";
 
 interface Props {
@@ -20,8 +21,9 @@ const canonicalUrl = Astro.site
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <meta name="theme-color" content="#f7f7f5" />
     <meta name="generator" content={Astro.generator} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
@@ -32,9 +34,13 @@ const canonicalUrl = Astro.site
   </head>
   <body>
     <main>
-      <header>
+      <header class="site-header">
         <a class="wordmark" href="/" aria-label="OwlFoundry home">OwlFoundry</a>
-        <a href="https://github.com/owlfoundry">GitHub</a>
+        <nav aria-label="Primary navigation">
+          <a class="nav-link" href="https://github.com/owlfoundry">
+            GitHub <span aria-hidden="true">↗</span>
+          </a>
+        </nav>
       </header>
 
       <slot />
