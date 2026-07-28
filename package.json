@@ -1,0 +1,40 @@
+{
+  "name": "@owlfoundry/website",
+  "version": "0.0.1",
+  "private": true,
+  "description": "OwlFoundry website",
+  "license": "BSD-3-Clause",
+  "type": "module",
+  "packageManager": "pnpm@11.17.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "pnpm peers check && pnpm check:types && pnpm lint && pnpm format:check",
+    "check:types": "astro check",
+    "check:worker": "wrangler deploy --dry-run --config wrangler.jsonc",
+    "audit": "pnpm audit --audit-level=moderate",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "deploy": "wrangler deploy --config wrangler.jsonc",
+    "prepare": "lefthook install"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.9",
+    "@astrojs/sitemap": "3.7.3",
+    "@eslint/js": "10.0.1",
+    "@typescript-eslint/parser": "8.65.0",
+    "astro": "7.1.3",
+    "eslint": "10.8.0",
+    "eslint-plugin-astro": "3.0.1",
+    "lefthook": "2.1.10",
+    "prettier": "3.9.6",
+    "prettier-plugin-astro": "0.14.1",
+    "typescript": "6.0.3",
+    "wrangler": "4.114.0"
+  }
+}

@@ -1,0 +1,48 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "OwlFoundry",
+  description = "OwlFoundry builds practical open-source infrastructure for developers and teams.",
+} = Astro.props;
+
+const canonicalUrl = Astro.site
+  ? new URL(Astro.url.pathname, Astro.site)
+  : Astro.url;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <link rel="canonical" href={canonicalUrl} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <a class="wordmark" href="/" aria-label="OwlFoundry home">OwlFoundry</a>
+        <a href="https://github.com/owlfoundry">GitHub</a>
+      </header>
+
+      <slot />
+    </main>
+
+    <footer>
+      <span>&copy; {new Date().getFullYear()} OwlFoundry</span>
+      <span>Open source software, thoughtfully made.</span>
+    </footer>
+  </body>
+</html>

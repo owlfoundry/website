@@ -1,0 +1,9 @@
+pre-commit:
+  commands:
+    quality:
+      run: pnpm check
+
+pre-push:
+  commands:
+    build:
+      run: pnpm build && pnpm check:worker
