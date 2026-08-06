@@ -48,8 +48,14 @@ const canonicalUrl = Astro.site
     </main>
 
     <footer>
-      <span>&copy; {new Date().getFullYear()} OwlFoundry</span>
-      <span>Open source software, thoughtfully made.</span>
+      <div class="footer-copy">
+        <span>&copy; {new Date().getFullYear()} OwlFoundry</span>
+        <span>Open source software, thoughtfully made.</span>
+      </div>
+      <nav class="footer-nav" aria-label="Legal">
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+      </nav>
     </footer>
   </body>
 </html>
