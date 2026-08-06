@@ -232,7 +232,7 @@ h1 {
 }
 
 .legal-page {
-  max-width: 760px;
+  max-width: 720px;
   padding: clamp(80px, 10vw, 128px) 0 24px;
 }
 
